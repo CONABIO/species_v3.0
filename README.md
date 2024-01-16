@@ -1,6 +1,6 @@
 # species_v3.0
 Beta version for SPECIES
-
+```mermaid
 erDiagram
     cargaInformacionBase{
         string var1
@@ -68,3 +68,4 @@ erDiagram
        string procedencia
        timestamp fecha_registro 
     }
+```
