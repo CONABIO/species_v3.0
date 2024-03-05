@@ -12,38 +12,37 @@ erDiagram
         string var3
         string varN
     }
-    rel_occgeo_geomalla }|--|{ occ_geo : contiene
-    rel_occgeo_geomalla }|--|{ geo_malla : contiene
+    rel_occgeo_geomalla }|--|{ occ_variable : contiene
+    rel_occgeo_geomalla }|--|{ occ_malla : contiene
     rel_occgeo_geomalla{
         integer idocc
         integer idgeo-malla
     }
-    occ_geo }|--|| fuente_datos : tiene
-    occ_geo{
-        serial idocc
-        geom the_geom
-        int idfuente_dato
-        json metadatos
+    occ_variable }|--|| fuente_datos : tiene
+    occ_variable{
+        integer idocc_var
+        integer idfuente_dato
+        jsonb metadatos
     }
     fuente_datos{
         serial idfuente_dato
-        string fuente_datos
-        json scheme_metadatos
-        string tipo_dato
-        boolean tercero
+        varchar fuente_datos
+        json esquema_metadatos
+        varchar tipo_dato
+        boolean es_tercero
     }
-    geo_malla }|--|| region : tiene
-    geo_malla{
-        serial idgeo_malla
+    occ_malla }|--|| area : tiene
+    occ_malla{
+        serial idocc_malla
         geom the_geom
-        integer idregion
+        integer idarea
     }
-    region{
+    area{
+        serial idarea
         integer idregion
         string region
-        array gids
-        string descripcion
         string resolucion
+        array gids
     }
     historicos_analisis{
         integer idhistorico

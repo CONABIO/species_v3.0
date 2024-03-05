@@ -4,7 +4,7 @@ The user will be able to select elements for a target group through a user inter
 
 ```mermaid
 flowchart LR
-    User --> id1(Display elements of Data Source)
+    User --> id1(Display elements of selected Data Source and Region)
     User --> id2(Navigate through elements)
     User --> id3(Use search engine to filter elements)
 ```

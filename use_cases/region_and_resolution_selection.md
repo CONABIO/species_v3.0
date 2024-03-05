@@ -4,7 +4,7 @@ The user will be able to select a region or geographic area from a list of avail
 
 ```mermaid
 flowchart LR
-    User --> id1(Select Region Enable)
-    User --> id2(Select Geographic area)
-    User --> id3(Select Resolution)
+    User --> id1(Select region enable)
+    User --> id2(Select geographic area)
+    User --> id3(Select resolution)
 ```

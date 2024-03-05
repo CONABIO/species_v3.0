@@ -4,7 +4,7 @@ The user will be able to select from a list, the data source that contains the e
 
 ```mermaid
 flowchart LR
-    User --> id1(Select Data Source)
-    User --> id2(Get info of Data Source)
+    User --> id1(Select data source)
+    User --> id2(Get info of data source)
     id1 --> id3(Enable regions)
 ```
