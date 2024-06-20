@@ -26,7 +26,9 @@ descartar registros del conjunto de datos para el análisis.
 
 ### Propuesta de endpoints
 
-GET `/variables`
+**GET** `/variables`
+
+Obtener el listado de variables definidas en la fuente de datos 
 
 Regresa
 
@@ -37,7 +39,9 @@ Regresa
 | level_size    | int    | Número de niveles que toma la variable     |
 | filter_fields | json   | Campos que acepta la variable para filtrar |
 
-GET `/variables/:id:`
+**GET** `/variables/:id:`
+
+Obetener el listado de niveles de la variable con id `:id:`
 
 Parámetros
 
@@ -57,7 +61,9 @@ Un arreglo `json` de tamaño `limit` con las propiedades listadas para cada regi
 | level_id | id   | Identificador del nivel de valor de la varible |
 | data     | json | Información sobre el nivel de la variable      |
 
-GET `/get_data/:id:`
+**GET** `/get_data/:id:`
+
+Obtener los valores de los niveles solicitados de la variable con id `:id:`
 
 Parámetros
 
@@ -74,6 +80,7 @@ Un arreglo `json` con registro con las siguientes propiedades
 
 | Campo    | Tipo       | Descripción                                                     |
 |----------|------------|-----------------------------------------------------------------|
+| id       | id         | Identificador de la variable                                    |
 | grid_id  | id         | Identificador de la malla a usar                                |
 | level_id | id         | Identificador del nivel de valor de la varible                  |
 | cells    | array[int] | Lista de celdas de la malla donde toma el nivel la variable     |
@@ -87,7 +94,26 @@ obligación de
   
   - Exponer las diferentes mallas en donde se puede hacer el análisis
   - Exponer los listados de variables con las que se pueden construir ensambles
-  - Calcular los valores de _score_ y épsilon para el ensamble 
+  - Calcular los valores de _score_ y épsilon para el ensamble
+
+### Propuesta de endpoints
+
+**GET** `/datasets`
+
+Regresa el listado de conjuntos de datos disponibles en el servicio
+
+Regresa
+
+Un arreglo `json` con registro con las siguientes propiedades
+
+| Campo | Tipo | Descripción                         |
+|-------|------|-------------------------------------|
+| id    | id   | Identificador de la fuente de datos |
+| name  | str  | Nombre de la fuente de datos        |
+
+**GET** `/datasets/:id:`
+
+URL base para acceder a los _endpoints_ de la fuente de datos con id `:id:` 
 
 TODO: @José Luis creo que esto es el servicio que presentaste. Tal vez se puede
 completar según el desarrollo presentado.
