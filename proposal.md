@@ -61,7 +61,7 @@ Un arreglo `json` de tamaño `limit` con las propiedades listadas para cada regi
 | level_id | id   | Identificador del nivel de valor de la varible |
 | data     | json | Información sobre el nivel de la variable      |
 
-**GET** `/get_data/:id:`
+**GET** `/get-data/:id:`
 
 Obtener los valores de los niveles solicitados de la variable con id `:id:`
 
@@ -97,6 +97,31 @@ obligación de
   - Calcular los valores de _score_ y épsilon para el ensamble
 
 ### Propuesta de endpoints
+
+**GET** `/region-grids`
+
+Obtiene el listado de mallas disponibles
+
+Parámetros
+
+| Parámetro | Tipo | Descripción                 | Default value |
+|-----------|------|-----------------------------|---------------|
+| q         | str  | Query para filtrar regiones | *             |
+
+Regresa
+
+Un arreglo `json` con registro con las siguientes propiedades
+
+| Campo  | Tipo | Descripción                                        |
+|--------|------|----------------------------------------------------|
+| id     | id   | Identificador de la malla                          |
+| region | str  | Nombre de la región donde la malla está disponible |
+| grid   | str  | Resolución o tipo de división de la malla          |
+
+
+**GET** `/region-grids/:id:`
+
+Regresa un geojson de la malla con identificador `:id:`
 
 **GET** `/datasets`
 
