@@ -96,6 +96,73 @@ obligación de
   - Exponer los listados de variables con las que se pueden construir ensambles
   - Calcular los valores de _score_ y épsilon para el ensamble
 
+
+### Esquemas de datos 
+
+Esta es una propuesta de creación de esquemas de datos para poder manejar la 
+definición de ensamables de modelos y que puedan ser procesados por este 
+servicio.
+
+#### Tipo filtro
+
+```json
+{
+    "$id": "URI/filter-schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Filter",
+    "description": "A container that holds information about how to narrow down a set of data",
+    "type": "onbject",
+    "properties": {
+        "name": {
+            "description": "Name of the filter",
+            "type": "string"
+        },
+        "value": {
+            "description": "Specifies the values data should have to be included based on this filter"
+            "type": "string"
+        }
+    }
+}
+```
+
+#### Tipo estado variable
+
+```json
+{
+    "$id": "URI/variable-state.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Variable state",
+    "description": "Value that holds a variable",
+    "properties": {
+        "variableId": {
+            "description": "variable id for the dataset",
+            "type": "string"
+        },
+        "datasetId": {
+            "description": "dataset id",
+            "type": "string"
+        },
+        "levelId": {
+            "description": "value that hold the varibles selected",
+            "type": "string"
+        }
+        "filters": {
+            "description": "a list of filter for the variable",
+            "type": "array",
+            "items": {
+                "$ref": "URI/filter-schema.json",
+            }
+        }
+    }
+}
+```
+
+#### Tipo ensamble
+
+
+
+
+
 ### Propuesta de endpoints
 
 **GET** `/region-grids`
