@@ -111,7 +111,7 @@ servicio.
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Filter",
     "description": "A container that holds information about how to narrow down a set of data",
-    "type": "onbject",
+    "type": "object",
     "properties": {
         "name": {
             "description": "Name of the filter",
@@ -159,10 +159,40 @@ servicio.
 
 #### Tipo ensamble
 
-
-
-
-
+```json
+{
+    "$id": "URI/ensamble.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Ensamble",
+    "description": "Experiment ensamble to explore relations",
+    "type": "object",
+    "properties": {
+        "target": {
+            "description": "A list of target variable states",
+            "type": "array",
+            "items": {
+                "$ref": "URI/variable-state.json"
+  
+            }
+        },
+        "covariables": {
+            "description": "A list of covariables states",
+            "type": "array",
+            "items": {
+                "$ref": "URI/variable-state.json"
+  
+            }
+        },
+        "grid-id": {
+            "description": "Grid to use for the experiment ensamble",
+            "type": "string"
+        },
+        "precision": {
+            "type": "float"
+        }
+    }
+}
+```
 ### Propuesta de endpoints
 
 **GET** `/region-grids`
