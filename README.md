@@ -2,14 +2,14 @@
 
 ## Servicios de fuentes de datos
 
-Cada fuentes de datos tendrá la responsabilidad de mantener sus datos e integrar
+Cada fuente de datos tendrá la responsabilidad de mantener sus datos e integrar
 a los mismos información respecto a como se traducen a las mallas geográficas 
-registradas en el catálogo central de mallas. Esto es cada registro se le podrá
+registradas en el catálogo central de mallas. Esto es, cada registro se le podrá
 asociar un conjunto de celdas donde este tiene presencia.
 
 Para cada conjunto de datos se puede definir una _variable_ como una medición 
-de alguna característica de los registros. En cada fuente de datos se tendrá 
-distintas variable definidas, e.g. en la fuente de datos SNIB se puede pensar 
+de alguna característica de los registros. En cada fuente de datos se tendrán 
+distintas variables definidas, e.g. en la fuente de datos SNIB, se puede pensar 
 una especie como variable, en el caso de BIOCLIM sería un bucket; una variable 
 asocia más de un registro del conjunto a una variable.
 
@@ -21,8 +21,77 @@ flowchart LR
     C --> E("`_celdas definidas a nivel global_`")
 ```
 
-Además se puede definir un conjunto de filtros que puedan ser usados para 
+Además, se puede definir un conjunto de filtros que puedan ser usados para 
 descartar registros del conjunto de datos para el análisis.
+
+## Fuentes de datos utilizadas en SPECIES
+
+El proyecto de SPECIES cuenta con tres fuentes de datos principales, mas otras
+fuentes de datos secundarias. 
+
+La fuentes principales integradas en este proyecto son: El Sistema Nacional de 
+Información sobre Biodiversidad de México (SNIB), El Sistema Global de Información 
+sobre Biodiversidad (GBIF, por sus siglas en inglés) y La Base de Datos Meteorólogicos 
+y Climáticos Globales (Worldcim).
+
+
+### Fuente de Datos SNIB
+
+El SNIB alberga la información de las especies, y actualmente contiene entre otros, 
+45,423,191 de registros de presencia de 114,684 especies, contenidas en sus catálogos 
+taxonómicos; fichas técnicas de más de 3,100 especies nativas de México y de más 
+de 1,280 especies exóticas. Se han integrado al SNIB, hasta agosto de 2022, los 
+resultados de 1,071 proyectos que dieron origen a 1,212 bases de datos. El SNIB, fuera
+del proyecto de SPECIES, contine información cartográfica con más de 18 mil mapas de 
+distintos temas, principalmente de la distribución de las especies, así como la 
+cobertura del suelo (vegetación y usos del suelo) del país en diferentes años; un 
+acervo con más de 620 mil imágenes de sensores remotos y 155 mil fotografías e 
+ilustraciones de especies, ecosistemas y usos en formato digital.
+
+
+### Fuente de Datos GBIF
+
+GBIF es una red internacional e infraestructura de datos financiada por los gobiernos 
+del mundo para dar a cualquiera, en cualquier lugar, acceso abierto a datos sobre 
+todas las formas de vida en la Tierra.
+
+La red GBIF de países —que se estructuran como nodos— y organizaciones participantes, 
+está coordinada a través de su Secretaría en Copenhague y proporciona a las instituciones 
+proveedoras de datos de todo el mundo estándares comunes y herramientas de código 
+abierto que les permiten compartir información sobre dónde y cuándo se han registrado las 
+especies. Este conocimiento procede de diversas fuentes, que incluyen desde especímenes 
+de museos recogidos en los siglos XVIII y XIX hasta fotografías de teléfonos inteligentes 
+geoetiquetadas y compartidas por naturalistas aficionados en los últimos días y semanas.
+
+
+La red de GBIF organiza todas esas fuentes mediante el uso del estándar Darwin Core, 
+que constituye la base del índice GBIF.org de cientos de millones de registros de especies. 
+Los proveedores ofrecen acceso abierto a sus juegos de datos eligiendo del listado de 
+distintos tipos de licencias Creative Commons, lo que permite a los científicos, 
+investigadores y otros usuarios aplicar o usar los datos cada año en cientos de publicaciones 
+revisadas por colegas o para documentos de política.
+
+La Secretaría de GBIF prepara un programa de trabajo anual dentro de un marco estratégico de 
+cinco años que recibe la revisión y aprobación de la Junta de Gobierno de GBIF.
+
+
+### Fuente de Datos WorldClim
+
+WorldClim es una base de datos de datos meteorológicos y climáticos globales de alta resolución 
+espacial. Estos datos se pueden utilizar para mapeo y modelado espacial. Los datos se 
+proporcionan para su uso en investigaciones y actividades relacionadas.
+
+La versión 2.1 para 1970-2000 de los datos climáticos de WorldClim versión 2.1 fue liberada en 
+enero de 2020.
+
+Hay datos climáticos mensuales de temperatura mínima, media y máxima, precipitación, radiación 
+solar, velocidad del viento, presión de vapor de agua y precipitación total. También hay 19 
+variables “bioclimáticas”.
+
+Los datos están disponibles en las cuatro resoluciones espaciales, entre 30 segundos (~1 km2) 
+y 10 minutos (~340 km2). Cada descarga es un archivo “zip” que contiene 12 archivos GeoTiff (.tif), 
+uno para cada mes del año.
+
 
 ### Propuesta de endpoints
 
