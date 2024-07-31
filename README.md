@@ -115,11 +115,11 @@ Obetener el listado de niveles de la variable con id `:id:`
 
 Parámetros
 
-| Parámetro | Tipo | Descripción                                    | Default value |
-|-----------|------|------------------------------------------------|---------------|
-| q         | str  | Patrón para filtrar los niveles de la variable | *             |
-| offset    | int  | Valor de la variable                           | null          |
-| limit     | int  | Campos que acepta la variable para filtrar     | 10            |
+| Parámetro | Tipo | Descripción                                     | Default value |
+|-----------|------|-------------------------------------------------|---------------|
+| q         | str  | Patrón para filtrar los niveles de la variable  | *             |
+| offset    | int  | Número de registros en la búsqueda para escapar | null          |
+| limit     | int  | Número de máximo de niveles en la respuesta     | 10            |
 
 Regresa
 
